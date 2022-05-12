@@ -1,58 +1,54 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <title>How to detect Android Phone using JavaScript ?</title>
-  </head>
 
-  <body style="text-align: center">
-    <p id="GFG_UP" style="font-size: 19px; font-weight: bold"></p>
+<head>
+	<title>
+		How to detect Android Phone
+		using JavaScript ?
+	</title>
+</head>
 
-    <button onclick="GFG_Fun()">click here</button>
+<body style = "text-align:center;">
 
-    <p
-      id="GFG_DOWN"
-      style="color: green; font-size: 24px; font-weight: bold"
-    ></p>
+	<h1 style = "color:green;" >
+		GeeksForGeeks
+	</h1>
 
-    <button id="AndroidBtn" style="display: none">Android</button>
+	<p id = "GFG_UP" style =
+		"font-size: 19px; font-weight: bold;">
+	</p>
+	
+	<button onclick = "GFG_Fun()">
+		click here
+	</button>
+	
+	<p id = "GFG_DOWN" style =
+		"color: green; font-size: 24px; font-weight: bold;">
+	</p>
+	
+	<script>
+		var el_up = document.getElementById("GFG_UP");
+		var el_down = document.getElementById("GFG_DOWN");
+		el_up.innerHTML = "Click on the button to detect if"
+					+ " the device is android phone.";
+		
+		function GFG_Fun() {
+			var res = "Device is a chrome browser";
+			var userAgent = navigator.userAgent.toLowerCase();
+			var Android = userAgent.indexOf("android") > -1;
+            var iOS =
+				/iPad|iPhone|iPod/.test(navigator.userAgent) &&
+				!window.MSStream;
+			
+			if(Android) {
+				res = "Device is Android Phone";
+			}
+            else if(iOS){
+                res = "Device is iOS";
+            }
+			el_down.innerHTML = res;
+		}
+	</script>
+</body>
 
-    <script>
-      var el_up = document.getElementById("GFG_UP");
-      var el_down = document.getElementById("GFG_DOWN");
-      var AndroidBtn = document.getElementById("AndroidBtn");
-      // el_up.innerHTML = "Click on the button to detect if"
-      // 			+ " the device is android phone.";
-
-      function AndroidValid() {
-        // const url = "intent://play.google.com/#Intent;scheme=https;package=com.instagram.android;end";
-        //  window.location.replace(url);
-      }
-
-      function GFG_Fun() {
-        var res = "Device is not Android Phone";
-        var userAgent = navigator.userAgent.toLowerCase();
-        var Android = userAgent.indexOf("android") > -1;
-        var iOS =
-          /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        if (Android) {
-          //   res = "Device is Android Phone";
-          const url =
-            "intent://play.google.com/#Intent;scheme=https;package=com.instagram.android;end";
-          window.location.replace(url);
-          res = "Device is Android";
-          //  AndroidBtn.style.display = "block";
-        } else if (IOS) {
-          const urlIOS =
-            "https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo";
-
-          window.location.replace(urlIOS);
-          res = "Device is IOS";
-        }
-        else{
-            window.location.replace("https://instagram.com");
-        }
-        el_down.innerHTML = res;
-      }
-    </script>
-  </body>
 </html>
