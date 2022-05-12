@@ -14,7 +14,7 @@
       style="color: green; font-size: 24px; font-weight: bold"
     ></p>
 
-    <button id="AndroidBtn" style="display:none;">Android</button>
+    <button id="AndroidBtn" >Android</button>
 
     <script>
       var el_up = document.getElementById("GFG_UP");
@@ -37,7 +37,7 @@
         //   res = "Device is Android Phone";
          const url = "intent://play.google.com/#Intent;scheme=https;package=com.instagram.android;end";
          window.location.replace(url);
-         AndroidBtn.style.display = "block"
+        //  AndroidBtn.style.display = "block"
         }
         el_down.innerHTML = res;
       }
