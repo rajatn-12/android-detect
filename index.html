@@ -36,10 +36,8 @@
           window.location.replace(url);
         } else if (iOS) {
           res = "Device is iOS";
-          const urlIOS =
-            "https://apps.apple.com/us/app/instagram://media?id=1346423547953773636_401375631";
+          window.location.replace("instagram://");
 
-          window.location.replace(urlIOS);
         }
         el_down.innerHTML = res;
        
